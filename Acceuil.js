@@ -102,13 +102,3 @@ function createGUI() {
   valider.style.border = '2px solid blue';
   document.body.appendChild(valider);
 }
-
-export class Acceuil {
-  constructor() {
-    console.log("Acceuil initialisé !");
-  }
-
-  createGUI() {
-    console.log("Interface créée !");
-  }
-}
