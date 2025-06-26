@@ -1,5 +1,4 @@
-
-class Acceuil {
+export class Acceuil {
   constructor() {
     this.aInterfaceAnalyse = null;
     this.aInterfaceConfig = null;
