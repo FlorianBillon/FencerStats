@@ -1,3 +1,9 @@
+import { JSDOM } from "jsdom";
+
+const { window } = new JSDOM("<!DOCTYPE html><html><body></body></html>");
+global.document = window.document;
+
+
 export class Acceuil {
   constructor() {
     this.aInterfaceAnalyse = null;
