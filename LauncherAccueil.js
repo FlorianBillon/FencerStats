@@ -1,4 +1,4 @@
-class LauncherAccueil {
+export class LauncherAccueil {
   static aAcceuil = null;
 
   constructor() {
@@ -15,6 +15,9 @@ class LauncherAccueil {
     }
   }
 }
+
+// ✅ Assure-toi que l'export est bien écrit
+export default LauncherAccueil;
 
 // Exécution de la classe
 const launcher = new LauncherAccueil();
