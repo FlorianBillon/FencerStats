@@ -1,0 +1,109 @@
+import { JSDOM } from "jsdom"; // ✅ Import correct
+
+const { window } = new JSDOM("<!DOCTYPE html><html><body></body></html>
+global.document = window.document;
+global.window = window;
+
+export class Acceuil {
+  constructor() {
+    this.aInterfaceAnalyse = null;
+    this.aInterfaceConfig = null;
+  }
+
+  createGUI() {
+    const frame = document.createElement('div');
+    frame.innerHTML = 'Acceuil';
+    frame.style.width = '300px';
+    frame.style.height = '200px';
+    frame.style.border = '1px solid black';
+    frame.style.padding = '10px';
+
+    const buttonGroup = {};
+    const radioButtons = [];
+
+    radioButtons.push(document.createElement('input'));
+    radioButtons[0].type = 'radio';
+    radioButtons[0].name = 'options';
+    radioButtons[0].value = 'Option 1';
+    radioButtons[0].innerHTML = 'Option 1';
+
+    radioButtons.push(document.createElement('input'));
+    radioButtons[1].type = 'radio';
+    radioButtons[1].name = 'options';
+    radioButtons[1].value = 'Option 2';
+    radioButtons[1].innerHTML = 'Option 2';
+
+    radioButtons.push(document.createElement('input'));
+    radioButtons[2].type = 'radio';
+    radioButtons[2].name = 'options';
+    radioButtons[2].value = 'Option 3';
+    radioButtons[2].innerHTML = 'Option 3';
+
+    for (const radioButton of radioButtons) {
+      radioButton.addEventListener('change', () => {
+        console.log(`Selected option: ${radioButton.value}`);
+      });
+    }
+
+    frame.appendChild(radioButtons[0]);
+    frame.appendChild(radioButtons[1]);
+    frame.appendChild(radioButtons[2]);
+
+    document.body.appendChild(frame);
+  }
+}
+
+Acceuil.main = function() {
+  setTimeout(() => {
+    new Acceuil().createGUI();
+  }, 0);
+};
+
+
+
+
+
+if (typeof window!== "undefined") {
+  window.onload = function() {
+    Acceuil.main();
+  };
+};
+
+function createGUI() {
+  const frame = document.createElement("iframe
+  frame.src = "about:blank";
+  frame.frameBorder = "0";
+  frame.width = "400";
+  frame.height = "250";
+  frame.title = "Acceuil";
+  document.body.appendChild(frame);
+
+  const group = document.createElement("div
+  group.style.display = "flex";
+  group.style.flexDirection = "column";
+  group.style.alignItems = "center";
+  document.body.appendChild(group);
+
+  const enterDataBtn = document.createElement("input
+  enterDataBtn.type = "radio";
+  enterDataBtn.name = "radioGroup";
+  enterDataBtn.value = "Enter data";
+  enterDataBtn.id = "EnterDataBtn";
+  group.appendChild(enterDataBtn);
+
+  const searchDataBtn = document.createElement("input
+  searchDataBtn.type = "radio";
+  searchDataBtn.name = "radioGroup";
+  searchDataBtn.value = "Search data";
+  searchDataBtn.id = "SearchDataBtn";
+  group.appendChild(searchDataBtn);
+
+  const label = document.createElement("label
+  label.textContent = "Acceuil";
+  group.appendChild(label);
+
+  const valider = document.createElement('button');
+  valider.textContent = 'Validate';
+  valider.style.border = '2px solid blue';
+  document.body.appendChild(valider);
+}
