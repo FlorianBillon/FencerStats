@@ -1,8 +1,8 @@
-import { JSDOM } from "jsdom";
+import { JSDOM } from "jsdom"; // ✅ Import correct
 
 const { window } = new JSDOM("<!DOCTYPE html><html><body></body></html>");
 global.document = window.document;
-
+global.window = window;
 
 export class Acceuil {
   constructor() {
