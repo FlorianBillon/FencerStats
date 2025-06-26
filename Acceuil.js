@@ -112,13 +112,3 @@ export class Acceuil {
     console.log("Interface créée !");
   }
 }
-
-export class Acceuil {
-  constructor() {
-    console.log("Acceuil initialisé !");
-  }
-
-  createGUI() {
-    console.log("Interface créée !");
-  }
-}
