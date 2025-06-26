@@ -1,3 +1,5 @@
+import { LauncherAccueil } from "./LauncherAccueil.js"; // ✅ Vérifie bien l'import
+
 import express from 'express'; // Si tu utilises ES Modules
 // const express = require('express'); // Si tu utilises CommonJS
 
