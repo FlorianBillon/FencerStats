@@ -15,8 +15,6 @@ app.listen(PORT, () => {
     console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
 
-import { LauncherAccueil } from "./LauncherAccueil.js";
-
 const launcher = new LauncherAccueil();
 launcher.main();
 
